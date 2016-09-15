@@ -197,9 +197,9 @@
 
     <TextView
         android:id="@+id/left_button"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="紧急情况"
+        android:text="紧急情况sdsdsds"
         android:gravity="center"
         android:layout_gravity="bottom|start"
         android:layout_marginStart="20dp"
@@ -208,9 +208,9 @@
 
     <TextView
         android:id="@+id/right_button"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="删除"
+        android:text="删除sdsdssd"
         android:gravity="center"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="20dp"

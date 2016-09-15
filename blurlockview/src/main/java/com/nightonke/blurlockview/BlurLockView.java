@@ -7,6 +7,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
@@ -222,9 +223,12 @@ public class BlurLockView extends FrameLayout
         title.setTextColor(ContextCompat.getColor(getContext(), R.color.default_title_text_color));
         title.setTextSize(resources.getInteger(R.integer.default_title_text_size));
 
+
         leftButton = (TextView) findViewById(R.id.left_button);
         leftButton.setTextColor(ContextCompat.getColor(getContext(), R.color.default_left_button_text_color));
         leftButton.setTextSize(resources.getInteger(R.integer.default_left_button_text_size));
+        leftButton.setTypeface(null, Typeface.BOLD);
+        leftButton.setPaintFlags(leftButton.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         leftButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,6 +239,8 @@ public class BlurLockView extends FrameLayout
         rightButton = (TextView) findViewById(R.id.right_button);
         rightButton.setTextColor(ContextCompat.getColor(getContext(), R.color.default_right_button_text_color));
         rightButton.setTextSize(resources.getInteger(R.integer.default_right_button_text_size));
+        title.setTypeface(null, Typeface.BOLD);
+        title.setPaintFlags(title.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         rightButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

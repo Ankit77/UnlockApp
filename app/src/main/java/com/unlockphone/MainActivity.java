@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements
 
         // Set the password
         blurLockView.setCorrectPassword("1234");
-        blurLockView.setTitle(getString(R.string.app_name));
-        blurLockView.setLeftButton("");
+        blurLockView.setTitle("Enter Four Digit Pin");
+        blurLockView.setLeftButton("Forgot Pin?");
         blurLockView.setRightButton("Back");
         blurLockView.setTypeface(getTypeface());
         blurLockView.setType(getPasswordType(), false);
