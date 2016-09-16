@@ -1,1 +1,1 @@
-include ':app', ':blurlockview'
+include ':app', ':blurlockview', ':circualreveal'

@@ -62,6 +62,7 @@ public class BlurLockView extends FrameLayout
     private TextView rightButton;
 
     private OnLeftButtonClickListener onLeftButtonClickListener;
+    private OnRightButtonClickListener onRightButtonClickListener;
     private OnPasswordInputListener onPasswordInputListener;
 
     public BlurLockView(Context context) {
@@ -229,24 +230,31 @@ public class BlurLockView extends FrameLayout
         leftButton.setTextSize(resources.getInteger(R.integer.default_left_button_text_size));
         leftButton.setTypeface(null, Typeface.BOLD);
         leftButton.setPaintFlags(leftButton.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        leftButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onLeftButtonClickListener != null) onLeftButtonClickListener.onClick();
-            }
-        });
+//        leftButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (onLeftButtonClickListener != null) onLeftButtonClickListener.onLeftClick();
+//            }
+//        });
 
         rightButton = (TextView) findViewById(R.id.right_button);
         rightButton.setTextColor(ContextCompat.getColor(getContext(), R.color.default_right_button_text_color));
         rightButton.setTextSize(resources.getInteger(R.integer.default_right_button_text_size));
         title.setTypeface(null, Typeface.BOLD);
         title.setPaintFlags(title.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        leftButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onLeftButtonClickListener != null) onLeftButtonClickListener.onLeftClick();
+            }
+        });
+
         rightButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (passwordStack.size() > 0) {
-                    passwordStack.pop();
-                    indicator.delete();
+                    passwordStack.clear();
+                    indicator.clear();
                 }
             }
         });
@@ -759,7 +767,11 @@ public class BlurLockView extends FrameLayout
     }
 
     public interface OnLeftButtonClickListener {
-        void onClick();
+        void onLeftClick();
+    }
+
+    public interface OnRightButtonClickListener {
+        void onRightClick();
     }
 
     /**
